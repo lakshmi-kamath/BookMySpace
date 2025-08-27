@@ -1,0 +1,182 @@
+/* Custom styles to enhance UI */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+}
+.navbar {
+  background-color: #6b21a8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand, .nav-link {
+  color: #ffffff !important;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #e9d5ff !important;
+}
+.btn-primary {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #6b21a8;
+  border-color: #6b21a8;
+}
+.btn-danger {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+.btn-danger:hover {
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+}
+.btn-warning {
+  background-color: #f59e0b;
+  border-color: #f59e0b;
+}
+.btn-warning:hover {
+  background-color: #d97706;
+  border-color: #d97706;
+}
+.btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #6b21a8;
+}
+.form-control {
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-control:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+.form-control::placeholder {
+  color: #9ca3af;
+}
+.table {
+  background-color: #ffffff;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+.table th {
+  background-color: #f1f5f9;
+  color: #1f2937;
+  font-weight: 600;
+}
+.table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+.table tr:hover {
+  background-color: #e5e7eb;
+}
+.card {
+  background-color: #ffffff;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+h2 {
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.container {
+  max-width: 1200px;
+}
+.hero {
+  animation: fadeIn 1s ease-in-out;
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+.animate-fade-in.delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-fade-in.delay-400 {
+  animation-delay: 0.4s;
+}
+.animate-fade-in.delay-600 {
+  animation-delay: 0.6s;
+}
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+/* Carousel Styles */
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+}
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.carousel-btn.left {
+  left: 10px;
+}
+.carousel-btn.right {
+  right: 10px;
+}
+@media (max-width: 768px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+  .form-control {
+    font-size: 0.875rem;
+  }
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+  .hero {
+    height: 60vh;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .carousel-item img {
+    height: 200px;
+  }
+}

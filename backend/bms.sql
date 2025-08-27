@@ -30,8 +30,8 @@ CREATE TABLE bookings (
     time_slot VARCHAR(50) NOT NULL,
     status ENUM('confirmed', 'cancelled', 'pending') DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (venue_id) REFERENCES venues(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (venue_id) REFERENCES venues(id) ON DELETE CASCADE,
     UNIQUE(venue_id, booking_date, time_slot)
 );
 
@@ -42,5 +42,5 @@ CREATE TABLE payments (
     amount DECIMAL(10, 2) NOT NULL,
     status ENUM('success', 'failed', 'refunded', 'pending') DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (booking_id) REFERENCES bookings(id)
+    FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
 );
